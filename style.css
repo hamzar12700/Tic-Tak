@@ -29,6 +29,7 @@ body{
     box-shadow: 0 0 1rem rgba(0,0,0,0.1);
     font-size: 8vmin;
     color: #F00D77;
+    background-color: #ffffc7;
 }
 #restart-btn {
 padding: 1rem;
