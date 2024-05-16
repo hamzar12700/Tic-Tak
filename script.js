@@ -1,10 +1,10 @@
 let boxes = document.querySelectorAll(".box");
-let restart_Btn = document.getElementById("#reset-btn");
-let newGame_Btn = document.getElementById("#new-btn");
-let msgContainer = document.getElementsByClassName(".msg-container");
+let restart_Btn = document.getElementById("reset-btn");
+let newGame_Btn = document.getElementById("new-btn");
+let msgContainer = document.getElementsByClassName("msg-container");
 let msg = document.querySelectorAll(".msg");
 
-let button = document.querySelector("button");
+//let button = document.querySelector("button");
 
 let turn0 = true;
 
@@ -19,13 +19,13 @@ let winPattern = [
   [2, 5, 8],
 ];
 
-const resetGame = () =>{
-turn0 = true
-for (let hide of msgContainer){
-    hide.classList.add("hide");
-}
-enable_btn();
-}
+const resetGame = () => {
+  turn0 = true;
+  enable_btn();
+  msgContainer.classList.add("hide");
+  // for (let hide of msgContainer){
+  //     hide.classList.add("hide");
+};
 
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
@@ -42,25 +42,25 @@ boxes.forEach((box) => {
   });
 });
 
-const disable_btn = () =>{
-    for (let box of boxes){
-        box.disabled= true;
-    }
+const disableBoxes = () => {
+  for (let box of boxes) {
+    box.disabled = true;
+  }
 };
-const enable_btn = () =>{
-    for (let box of boxes){
-        box.disabled= false;
-        box.innerText = "";
-    }
+const enable_btn = () => {
+  for (let box of boxes) {
+    box.disabled = false;
+    box.innerText = "";
+  }
 };
 const showWinner = (winner) => {
-  win_msg.innerText = `Congratulation ${winner} you have won the game`;
-  for (let hide of msgContainer){
-hide.classList.remove("hide");
+  msg.innerText = `Congratulation ${winner} you have won the game`;
+  for (let hide of msgContainer) {
+    hide.classList.remove("hide");
   }
   //msgContainer.
   //msgContainer.classList.remove("hide");
-  disable_btn();
+  disableBoxes();
 };
 
 const gameWinner = () => {
@@ -82,6 +82,5 @@ const gameWinner = () => {
 
 newGame_Btn.addEventListener("click", resetGame);
 restart_Btn.addEventListener("click", resetGame);
-
 
 //button.addEventListener("click", resetGame )
