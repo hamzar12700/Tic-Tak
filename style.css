@@ -39,3 +39,23 @@ color: #fff;
 border-radius: 1rem; 
 border: none;
 }
+#new-btn {
+    padding: 1rem;
+font-size: 1.25 rem;
+background-color: #000; 
+color: #fff;
+border-radius: 1rem; 
+border: none;
+}
+
+.msg {
+    font-size: 5vmin;
+    color: #ffffc7 ;
+}
+
+.msg-container {
+    height: 30vmin;
+}
+.hide {
+    display: none;
+}
